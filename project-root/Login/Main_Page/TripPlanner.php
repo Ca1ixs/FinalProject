@@ -31,11 +31,38 @@ require_once '../db.php';
       align-items: center;
     }
 
+    .world-map-scroll {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .world-map {
+      min-width: 350px;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .world-map svg {
       width: 100%;
+      height: auto;
+      min-width: 350px;
       max-width: 900px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .world-map {
+        min-width: 350px;
+        max-width: 600px;
+      }
+      .world-map svg {
+        min-width: 350px;
+        max-width: 600px;
+      }
     }
 
     .trip-planner-form { max-width: 900px; width: 100%; }
@@ -130,8 +157,10 @@ require_once '../db.php';
   <section class="trip-planner-container">
 
     <div class="map-and-activities">
-      <div class="world-map">
-        <?php include 'Compass_Site/Assets/images/interactive_map_updated.svg'; ?>
+      <div class="world-map-scroll">
+        <div class="world-map">
+          <?php include 'Compass_Site/Assets/images/interactive_map_updated.svg'; ?>
+        </div>
       </div>
     </div>
 

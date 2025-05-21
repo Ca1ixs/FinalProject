@@ -1,6 +1,6 @@
 <?php
 $username = $_SESSION['username'] ?? 'Guest';
-$email = $_SESSION['email'] ?? ''; // Make sure to set this in your login logic
+$email = $_SESSION['email'] ?? ''; 
 ?>
 <style>
 .user-info {
@@ -95,6 +95,35 @@ $email = $_SESSION['email'] ?? ''; // Make sure to set this in your login logic
   background: linear-gradient(90deg, #ffcc66 0%, #fcd835 100%);
   color: #cc6600;
 }
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 5px;
+  }
+  .logo img {
+    max-width: 120px;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 0;
+  }
+  .user-info {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo img {
+    max-width: 80px;
+  }
+}
 </style>
 
 <header role="banner">
@@ -121,7 +150,6 @@ $email = $_SESSION['email'] ?? ''; // Make sure to set this in your login logic
   </div>
 </header>
 
-<!-- Profile Modal -->
 <div id="profileModal" class="profile-modal" tabindex="-1">
   <div class="profile-modal-content">
     <span class="close" onclick="closeProfileModal()">&times;</span>
@@ -145,7 +173,6 @@ $email = $_SESSION['email'] ?? ''; // Make sure to set this in your login logic
     this.setAttribute('aria-expanded', !expanded);
   });
 
-  // Profile modal logic
   const profileBtn = document.getElementById('profileBtn');
   const profileModal = document.getElementById('profileModal');
   function closeProfileModal() {
@@ -156,17 +183,14 @@ $email = $_SESSION['email'] ?? ''; // Make sure to set this in your login logic
     e.preventDefault();
     profileModal.style.display = 'block';
     document.body.style.overflow = 'hidden';
-    // Hide dropdown
     userInfo.classList.remove('active');
     userInfo.setAttribute('aria-expanded', false);
   });
-  // Close modal when clicking outside content
   window.addEventListener('click', function(event) {
     if (event.target === profileModal) {
       closeProfileModal();
     }
   });
-  // Optional: close modal with ESC key
   window.addEventListener('keydown', function(event) {
     if (event.key === "Escape") closeProfileModal();
   });
