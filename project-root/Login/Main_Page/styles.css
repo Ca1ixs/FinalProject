@@ -1,0 +1,295 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('../LogAccount/Assets/SignUp.png') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #f0f4f8;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background-color: #333333;
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 0 0 8px 8px;
+}
+
+.logo {
+  max-width: 120px;
+  height: auto;
+}
+
+/* Navigation */
+nav {
+  flex: 1;
+  margin: 0 40px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li a {
+  display: block;
+  width: 141px;
+  height: 21px;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  text-indent: -9999px;
+  border-radius: 4px;
+  transition: filter 0.2s ease;
+}
+
+nav ul li a.tripplanner-btn {
+  background-image: url('Compass_Site/Assets/images/MenuTripPlanner.png');
+}
+
+nav ul li a.destinations-btn {
+  background-image: url('Compass_Site/Assets/images/MenuDestinations.png');
+}
+
+nav ul li a.travelog-btn {
+  background-image: url('Compass_Site/Assets/images/MenuTravelLogs.png');
+}
+
+nav ul li a:hover {
+  filter: brightness(0.85);
+}
+
+nav a.active {
+  outline: 2px solid white;
+  background-color: #555;
+  color: white;
+}
+
+/* User info */
+.user-info {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+#dropdownMenu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  color: black;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  margin-top: 5px;
+  min-width: 100px;
+  z-index: 999;
+}
+
+.user-info:hover #dropdownMenu {
+  display: block;
+}
+
+#dropdownMenu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+#dropdownMenu a:hover {
+  background-color: #eee;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 40px;
+  background-color: transparent;
+}
+
+.trip-planner-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+/* Form section */
+.trip-planner-form {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.trip-planner-form h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #004d66;
+  border-bottom: 3px solid #006699;
+  padding-bottom: 10px;
+}
+
+.trip-planner-form label {
+  font-weight: 600;
+  margin-top: 15px;
+  color: #004d66;
+}
+
+.trip-planner-form input[type="text"],
+.trip-planner-form input[type="date"],
+.trip-planner-form textarea,
+.trip-planner-form select {
+  padding: 12px 15px;
+  border: 1.8px solid #ccc;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  margin-top: 6px;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+.trip-planner-form input:focus,
+.trip-planner-form select:focus,
+.trip-planner-form textarea:focus {
+  border-color: #006699;
+  outline: none;
+}
+
+.trip-planner-form textarea {
+  min-height: 100px;
+}
+
+.trip-planner-form button {
+  margin-top: 30px;
+  padding: 14px 24px;
+  background-color: #006699;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+  box-shadow: 0 4px 10px rgba(0, 102, 153, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.trip-planner-form button:hover {
+  background-color: #004d66;
+  box-shadow: 0 6px 12px rgba(0, 77, 102, 0.6);
+}
+
+/* Activities checkbox group */
+.activity-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.activity-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.activity-checkbox input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: #006699;
+}
+
+/* Saved trips */
+.saved-trips-list {
+  flex: 1 1 450px;
+  overflow-y: auto;
+  max-height: 600px;
+  padding-left: 20px;
+  border-left: 2px solid #e2e8f0;
+}
+
+.saved-trips-list h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #004d66;
+  border-bottom: 3px solid #006699;
+  padding-bottom: 8px;
+}
+
+.saved-trips-list .trip {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #f9fafe;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.saved-trips-list .trip:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.saved-trips-list .trip h3 {
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .trip-planner-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .saved-trips-list {
+    padding-left: 0;
+    border-left: none;
+    border-top: 2px solid #e2e8f0;
+    margin-top: 40px;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+footer a {
+  color: #993300;
+  text-decoration: underline;
+}
+
+#contactInfo {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #333;
+}

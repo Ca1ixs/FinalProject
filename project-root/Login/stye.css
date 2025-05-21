@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcd835;
+}
+
+.split-screen {
+    display: flex;
+    width: 90%;
+    max-width: 950px;
+    height: 85vh;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Side */
+.left-side {
+    flex: 1;
+    background-color: skyblue;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+
+.left-side h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.left-side .brand {
+    font-size: 2.3rem;
+    color: #fcd835;
+    font-family: 'Georgia', serif;
+    margin-top: 10px;
+}
+
+/* Right Side */
+.right-side {
+    flex: 1;
+    background-color: white;
+    padding: 60px 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-side h2 {
+    font-size: 2rem;
+    color: #c69400;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+}
+
+.right-side small {
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #f0b400;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+form button:hover {
+    background-color: #d19900;
+}
+
+.social-button {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 16px;
+    gap: 10px;
+}
+
+.right-side label {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.right-side label input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+button {
+    padding: 12px;
+    background-color: #f0b400;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #d19900;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin-top: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.social-button:hover {
+    background-color: #333;
+}
+
+.social-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+p.error {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p.success {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+small a {
+    color: #c69400;
+    text-decoration: none;
+}
+
+small a:hover {
+    text-decoration: underline;
+}
+
+small:last-child {
+    margin-top: 15px;
+}
+header {
+  position: relative;
+  background-color: #006699; /* or your preferred navbar color */
+  color: white;
+  padding: 20px;
+}
+
+.header-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: inline-flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a.active {
+  text-decoration: underline;
+}
+
+.user-info {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: center;
+  z-index: 10;
+}
+
+.user-info img {
+  display: block;
+  margin: 0 auto;
+  max-width: 80px;
+}
+
+.username {
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  margin-top: 5px;
+  position: relative;
+}
+
+#dropdownMenu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  color: black;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  margin-top: 5px;
+  min-width: 100px;
+}
+
+#dropdownMenu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+#dropdownMenu a:hover {
+  background-color: #eee;
+}
